@@ -27,9 +27,12 @@ jobs:
 
       - name: Archive production files
         run: |
+          rm -rf release
           mkdir -p release
-          cp -r * release/
+          shopt -s extglob
+          cp -r !(release) release/
           tar -czf release.tar.gz -C release .
+
 
       - name: Copy files to VM
         uses: appleboy/scp-action@v0.1.7
