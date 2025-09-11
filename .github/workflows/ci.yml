@@ -55,5 +55,6 @@ jobs:
             tar -xzf ~/app/release.tar.gz -C ~/app/deploy
             cd ~/app/deploy
             npm install --production
+            # Reload app safely without downtime
             pm2 reload backend || pm2 start npm --name "backend" -- start
 
