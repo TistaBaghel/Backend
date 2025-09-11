@@ -55,6 +55,5 @@ jobs:
             tar -xzf ~/app/release.tar.gz -C ~/app/deploy
             cd ~/app/deploy
             npm install --production
-            pm2 delete backend || true
-            # Start new process on port 80
-            pm2 start npm --name "backend" -- start
+            pm2 reload backend || pm2 start npm --name "backend" -- start
+
