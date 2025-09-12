@@ -56,3 +56,4 @@ jobs:
             cd ~/app/deploy
             npm install --production
             pm2 reload backend || pm2 start npm --name "backend" -- start
+          
